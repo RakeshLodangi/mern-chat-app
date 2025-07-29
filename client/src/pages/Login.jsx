@@ -4,6 +4,8 @@ import API, { setAuthToken } from '../utils/api';
 import { useAuth } from '../context/AuthContext';
 import { useSocket } from '../context/SocketContext';
 
+import './Login.css';
+
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
@@ -33,26 +35,30 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type='email'
-        name="email" 
-        placeholder="Email" 
-        onChange={handleChange}
-        required
-      />
+    <div className="container-wrapper">
+      <div className='login-container'>
+        <form onSubmit={handleSubmit} className='login-form'>
+          <input
+            type='email'
+            name="email" 
+            placeholder="Email" 
+            onChange={handleChange}
+            required
+          />
 
-      <input
-        type='password'
-        name="password"  
-        placeholder="Password"
-        required 
-        onChange={handleChange} 
-      />
+          <input
+            type='password'
+            name="password"  
+            placeholder="Password"
+            required 
+            onChange={handleChange} 
+          />
 
-      <button type="submit" >Login</button>
-      {error && <p>{error}</p>}
-    </form>
+          <button type="submit" >Login</button>
+          {error && <p>{error}</p>}
+        </form>
+      </div>
+    </div>
   );
 };
 
