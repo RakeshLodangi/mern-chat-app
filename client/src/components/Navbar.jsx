@@ -2,6 +2,8 @@
 // src/components/Navbar.jsx
 import { Link, useNavigate } from 'react-router-dom';
 
+import './Navbar.css';
+
 const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
 
@@ -11,8 +13,8 @@ const Navbar = ({ user, onLogout }) => {
   };
 
   return (
-    <nav style={{ padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
-      <Link to="/" style={{ fontWeight: 'bold' }}>ChatApp</Link>
+    <nav className='nav-bar'>
+      <Link to="/" className='logo'>ChatApp</Link>
       
       <div>
         {user ? (
@@ -22,8 +24,8 @@ const Navbar = ({ user, onLogout }) => {
           </>
         ) : (
           <>
-            <Link to="/login" style={{ marginRight: '10px' }}>Login</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/login" className='login-link'>Login</Link>
+            <Link to="/register" className='register-link'>Register</Link>
           </>
         )}
       </div>

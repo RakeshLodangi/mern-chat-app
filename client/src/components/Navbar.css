@@ -1,0 +1,22 @@
+.nav-bar {
+    background-color: rgb(204, 102, 102);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.login-link, .register-link {
+    margin-right: 20px;
+    font-size: 18px;
+    color: white;
+}
