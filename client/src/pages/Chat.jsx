@@ -152,7 +152,7 @@ const Chat = () => {
           + Start New Chat
         </button>
 
-        <ChatList chats={chats} setSelectedChat={setSelectedChat} />
+        <ChatList chats={chats} setSelectedChat={setSelectedChat} currentUser={user} />
 
       </div>
 

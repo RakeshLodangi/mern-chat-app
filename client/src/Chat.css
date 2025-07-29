@@ -28,6 +28,9 @@
 /* Chat List (left panel) */
 .chat-item {
   padding: 10px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aliceblue;
   border-bottom: 1px solid #e0e0e0;
   cursor: pointer;
   transition: background-color 0.2s ease;
