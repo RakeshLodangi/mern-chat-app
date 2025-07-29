@@ -3,6 +3,8 @@ import { useState } from 'react';
 import API from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 
+import './Register.css'
+
 const Register = () => {
   const [form, setForm] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState('');
@@ -27,13 +29,18 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="username" type='text' placeholder="Username" onChange={handleChange} />
-      <input name="email" type='email' placeholder="Email" onChange={handleChange} />
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} />
-      <button type="submit">Register</button>
-      { error && <p>{error}</p>}
-    </form>
+    <div className="register-wrapper">
+      <div className="register-container">
+        <h1>Welcome, Register Here.</h1>
+        <form onSubmit={handleSubmit} className='register-form'>
+          <input name="username" type='text' placeholder="Username" onChange={handleChange} />
+          <input name="email" type='email' placeholder="Email" onChange={handleChange} />
+          <input name="password" type="password" placeholder="Password" onChange={handleChange} />
+          <button type="submit">Register</button>
+          { error && <p>{error}</p>}
+        </form>
+      </div>
+    </div>
   );
 };
 
