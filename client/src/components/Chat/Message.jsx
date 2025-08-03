@@ -1,6 +1,7 @@
 
 import { useAuth } from '../../context/AuthContext';
 
+import './Message.css';
 
 const Message = ({ msg }) => {
   const { user } = useAuth();
