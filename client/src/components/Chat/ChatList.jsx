@@ -1,4 +1,6 @@
 
+import './ChatList.css';
+
 const ChatList = ({ chats, setSelectedChat, selectedChat, currentUser }) => {
 
   const getOtherUser = (users, currentUserId) => {
@@ -6,7 +8,7 @@ const ChatList = ({ chats, setSelectedChat, selectedChat, currentUser }) => {
   };
 
   return (
-    <div>
+    <div className="chat-list">
       <h2>Chats</h2>
       {chats.length === 0 && <p>No chats available</p>}
       {chats.map(chat => { 
