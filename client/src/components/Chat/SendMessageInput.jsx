@@ -1,4 +1,6 @@
 
+import './SendMessageInput.css';
+
 const SendMessageInput = ({ chatId, message, setMessage, onSend }) => {
 
   const sendMessage = () => {
@@ -8,11 +10,12 @@ const SendMessageInput = ({ chatId, message, setMessage, onSend }) => {
   };
 
   return (
-    <div className="send-message-input">
+    <div className="send-message">
       <input
         type="text" 
         value={message} 
         onChange={e => setMessage(e.target.value)}
+        onKeyDown={e => e.key === 'Enter' && sendMessage()}
         placeholder='Type a message...'
       />
       <button 
