@@ -5,6 +5,8 @@ import SendMessageInput from './SendMessageInput';
 import Message from './Message';
 import { useAuth } from '../../context/AuthContext';
 
+import './ChatBox.css';
+
 const ChatBox = ({ selectedChat, messages, message, setMessage, onSendMessage }) => {
   const socket = useSocket();
   const { user } = useAuth();
@@ -23,9 +25,11 @@ const ChatBox = ({ selectedChat, messages, message, setMessage, onSendMessage })
 
   return (
     <div className="chat-box">
-      {messages.map((msg, idx) => <Message key={idx} msg={msg} />)}
-      
-      <div ref={bottomRef} />
+      <div className='messages-list'>
+        {messages.map((msg, idx) => <Message key={idx} msg={msg} />)}
+
+        <div ref={bottomRef} />
+      </div>
 
       <SendMessageInput 
         chatId={selectedChat?._id}

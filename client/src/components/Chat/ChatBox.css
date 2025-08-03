@@ -1,0 +1,42 @@
+/* src/components/Chat/ChatBox.css */
+
+.chat-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Messages Area */
+.messages-list {
+  flex: 1;
+  padding: 16px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(to bottom, #f3f4f6, #ffffff);
+  scroll-behavior: smooth;
+}
+
+/* Hide default scrollbar and style */
+.messages-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Bottom Ref Helper (optional styling for spacing) */
+.messages-list div[ref] {
+  height: 1px;
+}
