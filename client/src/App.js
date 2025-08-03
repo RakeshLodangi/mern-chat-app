@@ -9,8 +9,6 @@ import Navbar from './components/Navbar';
 import { setAuthToken } from './utils/api';
 import { useAuth } from './context/AuthContext';
 
-import './Chat.css';
-
 
 function App() {
   const { user, logout } = useAuth();

@@ -1,22 +1,84 @@
+
 .nav-bar {
-    background-color: rgb(204, 102, 102);
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: aliceblue;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e879a;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
 }
 
-.login-link, .register-link {
-    margin-right: 20px;
-    font-size: 18px;
-    color: white;
+.logo:hover {
+  color: #3852af;
+  transform: scale(1.05);
+}
+
+.nav-bar div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-bar span {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-bar button {
+  font-size: 14px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #fce4ec;
+  color: #d81b60;
+}
+
+.nav-bar button:hover {
+  background-color: #d81b60;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Login Button */
+.login-link {
+  background-color: #4caf50;
+  padding: 4px 10px;
+  color: white;
+  margin-right: 18px;
+  font-size: 18px;
+}
+
+.login-link:hover {
+  background-color: #43a047;
+}
+
+/* Register Button */
+.register-link {
+  background-color: #2196f3;
+  color: white;
+  font-size: 18px;
+  padding: 4px 10px;
+}
+
+.register-link:hover {
+  background-color: #1976d2;
 }
