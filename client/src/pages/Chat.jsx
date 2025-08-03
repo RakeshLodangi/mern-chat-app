@@ -8,6 +8,8 @@ import ChatBox from '../components/Chat/ChatBox';
 import { useSocket } from '../context/SocketContext';
 import UserListModal from '../components/Chat/UserListModal';
 
+import './Chat.css';
+
 const Chat = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -144,28 +146,28 @@ const Chat = () => {
         />
       )}
 
-      <div className='chat-list'>
-        <button
-          className='start-chat-btn'
-          onClick={() => setShowUserList(true)}
-        >
-          + Start New Chat
-        </button>
+      <div className='chat-wrapper'>
 
-        <ChatList chats={chats} setSelectedChat={setSelectedChat} currentUser={user} />
+        <div className='chat-container'>
+          <button
+            className='start-chat-btn'
+            onClick={() => setShowUserList(true)}
+          >
+            + Start New Chat
+          </button>
 
-      </div>
+          <ChatList chats={chats} setSelectedChat={setSelectedChat} currentUser={user} />
 
-      <div className="chat-box">
-          <ChatBox 
-            selectedChat={selectedChat}
-              messages = {messages}
-              message = {message}
-              setMessage = {setMessage}
+        </div>
+        <ChatBox 
+          selectedChat={selectedChat}
+            messages = {messages}
+            message = {message}
+            setMessage = {setMessage}
             onSendMessage = {handleSendMessage}
-          />
+        />
+        
       </div>
-      
 
     </div>
   );
