@@ -19,7 +19,11 @@ const app = express();
 const server = http.createServer(app);
 
 //Middleware
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ 
+    origin: process.env.CLIENT_URL || 'http://localhost:3000', 
+    credentials: true 
+}));
+
 app.use(express.json());
 
 // Route setup
@@ -48,7 +52,7 @@ mongoose.connect(MONGO_URI)
 // Socket.io connection
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:3000', // for development purposes, adjust as needed
+        origin: process.env.CLIENT_URL || 'http://localhost:3000', 
         methods: ['GET', 'POST'],
         credentials: true,
     }
@@ -61,7 +65,7 @@ io.on('connection', (socket) => {
     socket.on('joinChat', ({ chatId, user }) => {
         try {
             if (!chatId || !user || !user.username) {
-                console.warn("Inavalid Joinchat payload", { chatId, user});
+                console.warn("Invalid Joinchat payload", { chatId, user});
                 return;
             }
 
